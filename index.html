@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ayuda a la enseñanza sobre el goniómetro Wild G-10">
+  <title>Goniómetro Wild G-10</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">G-10</div>
+      <div><strong>Goniómetro Wild</strong><span>Ayuda a la enseñanza</span></div>
+    </div>
+
+    <nav class="side-nav" aria-label="Navegación principal">
+      <a href="#inicio" class="nav-link active">Inicio</a>
+      <a href="#generalidades" class="nav-link">Generalidades</a>
+      <a href="#descripcion" class="nav-link">Descripción</a>
+      <a href="#puesta-estacion" class="nav-link">Puesta en estación</a>
+      <a href="#brujula" class="nav-link">Brújula</a>
+      <a href="#fase2" class="nav-link disabled">Lecturas <small>Fase 2</small></a>
+    </nav>
+
+    <div class="sidebar-note">
+      <strong>Versión actualizada</strong>
+      <span>Diseño moderno con el material fotográfico original.</span>
+    </div>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <button id="menuButton" class="menu-button" aria-label="Abrir menú">☰</button>
+      <div>
+        <p>Academia de Artillería</p>
+        <h1>Goniómetro Wild G-10</h1>
+      </div>
+      <a href="#inicio" class="top-link">Inicio</a>
+    </header>
+
+    <main>
+      <section id="inicio" class="page-section hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Recurso didáctico</span>
+          <h2>Una versión web clara, actual y utilizable sin conexión</h2>
+          <p>Consulte las características del G-10, identifique sus componentes y repase la puesta en estación mediante los vídeos originales.</p>
+          <div class="actions">
+            <a href="#generalidades" class="button primary">Comenzar</a>
+            <a href="#descripcion" class="button secondary">Ver componentes</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/images/descripcion_conjunto.png" alt="Conjunto del goniómetro Wild G-10">
+        </div>
+      </section>
+
+      <section id="generalidades" class="page-section">
+        <div class="section-heading">
+          <div><span class="eyebrow">01 · Generalidades</span><h2>Características y empleo</h2></div>
+          <p>Información básica del instrumento, presentada con un diseño más limpio.</p>
+        </div>
+
+        <div class="two-column">
+          <article class="legacy-card">
+            <div class="legacy-label">Imagen original de referencia</div>
+            <img src="assets/images/generalidades_original.png" alt="Generalidades del G-10">
+            <button class="image-action" data-image="assets/images/generalidades_original.png" data-title="Generalidades del G-10">Ampliar</button>
+          </article>
+
+          <div class="spec-grid">
+            <article><span>Peso</span><strong>3,2 kg</strong></article>
+            <article><span>Aumento</span><strong>10×</strong></article>
+            <article><span>Dirección</span><strong>6400₥</strong></article>
+            <article><span>Posición horizontal</span><strong>1000₥</strong></article>
+            <article class="wide"><span>Utilización principal</span><p>Medición de ángulos horizontales y verticales, determinación de orientaciones y apoyo a la medición de distancias.</p></article>
+            <article class="wide"><span>Conjunto</span><p>Goniómetro, trípode, estuche de transporte y placa base.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="descripcion" class="page-section">
+        <div class="section-heading">
+          <div><span class="eyebrow">02 · Descripción</span><h2>Componentes del goniómetro</h2></div>
+          <p>Seleccione un componente. La imagen original se muestra como referencia y la explicación aparece en una ficha separada.</p>
+        </div>
+
+        <div class="description-layout">
+          <div class="component-menu" id="componentMenu"></div>
+
+          <article class="component-card">
+            <div class="component-header">
+              <span id="componentNumber">1</span>
+              <div>
+                <p id="componentCategory">Observación</p>
+                <h3 id="componentName">Anteojo acodado</h3>
+              </div>
+            </div>
+
+            <div class="component-body">
+              <div class="component-copy">
+                <span class="mini-title">FUNCIÓN</span>
+                <p id="componentDescription"></p>
+                <div id="componentTags" class="tags"></div>
+              </div>
+
+              <div class="legacy-image-wrap">
+                <div class="legacy-label">Imagen original de referencia</div>
+                <img id="componentImage" src="assets/images/anteojo_acodado.png" alt="Anteojo acodado">
+                <p class="image-warning">Las indicaciones «pulse aquí» pertenecen al recurso antiguo. En esta versión utilice únicamente los controles de la web.</p>
+                <button id="expandComponent" class="image-action">Ampliar imagen</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="views-block">
+          <div class="views-heading">
+            <h3>Vistas generales del aparato</h3>
+            <p>Sirven para ubicar visualmente los componentes antes de consultar cada ficha.</p>
+          </div>
+          <div class="views-grid">
+            <article class="legacy-card">
+              <div class="legacy-label">Vista 1</div>
+              <img src="assets/images/vista_1.png" alt="Vista 1 del G-10">
+              <button class="image-action" data-image="assets/images/vista_1.png" data-title="Vista 1 del G-10">Ampliar</button>
+            </article>
+            <article class="legacy-card">
+              <div class="legacy-label">Vista 2</div>
+              <img src="assets/images/vista_2.png" alt="Vista 2 del G-10">
+              <button class="image-action" data-image="assets/images/vista_2.png" data-title="Vista 2 del G-10">Ampliar</button>
+            </article>
+            <article class="legacy-card">
+              <div class="legacy-label">Vista 3</div>
+              <img src="assets/images/vista_3.png" alt="Vista 3 del G-10">
+              <button class="image-action" data-image="assets/images/vista_3.png" data-title="Vista 3 del G-10">Ampliar</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="puesta-estacion" class="page-section">
+        <div class="section-heading">
+          <div><span class="eyebrow">03 · Puesta en estación</span><h2>Nivelación del instrumento</h2></div>
+          <p>Comparación entre el procedimiento con el nivel corregido y el caso descorregido.</p>
+        </div>
+
+        <div class="procedure-grid">
+          <div class="steps">
+            <article><span>1</span><div><h3>Colocación inicial</h3><p>Sitúe el nivel paralelo al plano vertical que contiene dos tornillos nivelantes.</p></div></article>
+            <article><span>2</span><div><h3>Centrado</h3><p>Accione ambos tornillos en sentido contrario hasta centrar la burbuja.</p></div></article>
+            <article><span>3</span><div><h3>Giro de 90°</h3><p>Gire el instrumento alrededor del eje principal.</p></div></article>
+            <article><span>4</span><div><h3>Ajuste final</h3><p>Centre la burbuja con el tercer tornillo y compruebe la estabilidad.</p></div></article>
+          </div>
+
+          <div class="video-panel">
+            <div class="video-tabs">
+              <button class="video-tab active" data-video="correcto">Nivel corregido</button>
+              <button class="video-tab" data-video="incorrecto">Nivel descorregido</button>
+            </div>
+            <video id="procedureVideo" controls preload="metadata" src="assets/videos/procedimiento_correcto.mp4"></video>
+            <div class="video-caption">
+              <span id="videoStatus" class="status good">Procedimiento correcto</span>
+              <p id="videoDescription">Secuencia de nivelación con el instrumento correctamente ajustado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="brujula" class="page-section">
+        <div class="section-heading">
+          <div><span class="eyebrow">04 · Brújula</span><h2>Uso de la lupa</h2></div>
+          <p>Vídeo original integrado en una interfaz actual.</p>
+        </div>
+
+        <div class="feature-card">
+          <video controls preload="metadata" src="assets/videos/uso_lupa_brujula.mp4"></video>
+          <div>
+            <span class="mini-title">LUPA DE LA BRÚJULA</span>
+            <h3>Lectura y orientación</h3>
+            <p>La lupa permite observar la brújula integrada y comprobar su posición durante la orientación magnética.</p>
+            <button class="button secondary" id="openCompass">Ver imagen original</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="fase2" class="page-section">
+        <div class="phase-card">
+          <span class="eyebrow">Fase 2</span>
+          <h2>Práctica de toma de lecturas</h2>
+          <p>La parte interactiva de dirección y elevación queda reservada para una segunda fase.</p>
+          <span class="pending">Pendiente de desarrollo</span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="imageModal">
+    <div class="modal-header">
+      <strong id="modalTitle"></strong>
+      <button id="closeModal" aria-label="Cerrar">×</button>
+    </div>
+    <img id="modalImage" alt="">
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
