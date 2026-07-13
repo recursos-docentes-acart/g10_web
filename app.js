@@ -1,74 +1,271 @@
 const components = [
-  {name:"Anteojo acodado", category:"Observación", description:"Proporciona la visual de la dirección hacia la que apunta el goniómetro.", image:"assets/images/anteojo_acodado.png", tags:["Observación","Dirección"]},
-  {name:"Tambor y platillo de elevación", category:"Elevación", description:"Permite medir los ángulos de elevación y varía con el movimiento vertical del anteojo.", image:"assets/images/tambor_elevacion.png", tags:["Elevación","Lectura"]},
-  {name:"Lupa de la brújula", category:"Orientación", description:"Permite observar la brújula integrada y comprobar su calado.", image:"assets/images/lupa_brujula.png", tags:["Brújula","Orientación"]},
-  {name:"Tornillo de movimiento particular", category:"Dirección", description:"Su tornillo produce movimiento lento y su palanca movimiento rápido; modifica las lecturas en dirección.", image:"assets/images/movimiento_particular.png", tags:["Dirección","Movimiento"]},
-  {name:"Tambor y platillo de dirección", category:"Dirección", description:"Mide los ángulos en dirección y varía con el movimiento particular.", image:"assets/images/tambor_direccion.png", tags:["Dirección","Lectura"]},
-  {name:"Movimiento general", category:"Dirección", description:"Mueve el conjunto en dirección sin modificar las lecturas.", image:"assets/images/movimiento_general.png", tags:["Dirección","Movimiento"]},
-  {name:"Tornillos nivelantes", category:"Nivelación", description:"Los tres tornillos permiten nivelar el goniómetro sobre la placa base.", image:"assets/images/tornillos_nivelantes.png", tags:["Nivelación","Base"]},
-  {name:"Brújula", category:"Orientación", description:"Indica la posición del norte magnético y permite orientar el instrumento.", image:"assets/images/brujula.png", tags:["Orientación","Norte magnético"]},
-  {name:"Nivel esférico", category:"Nivelación", description:"Se utiliza para efectuar la nivelación inicial o en grueso.", image:"assets/images/nivel_esferico.png", tags:["Nivelación","Ajuste inicial"]},
-  {name:"Palanca de la brújula", category:"Orientación", description:"Libera la brújula para que pueda moverse libremente.", image:"assets/images/palanca_brujula.png", tags:["Brújula","Orientación"]},
-  {name:"Nivel tubular", category:"Nivelación", description:"Permite realizar la nivelación fina del instrumento.", image:"assets/images/nivel_tubular.png", tags:["Nivelación","Ajuste fino"]}
+  {
+    name:"Anteojo acodado",
+    category:"Observación",
+    description:"Proporciona la visual de la dirección hacia la que apunta el goniómetro y permite enfocar el objetivo.",
+    tags:["Observación","Sistema óptico"],
+    view:"vista_oblicua",
+    viewTitle:"Vista oblicua",
+    marker:[43,20],
+    photos:["assets/images/nuevas/anteojo_acodado.jpg"]
+  },
+  {
+    name:"Tambor y platillo de elevación",
+    category:"Elevación",
+    description:"Permite medir los ángulos de elevación. La lectura varía con el movimiento vertical del anteojo.",
+    tags:["Elevación","Lectura angular"],
+    view:"vista_frontal",
+    viewTitle:"Vista frontal",
+    marker:[60,24],
+    photos:[
+      "assets/images/nuevas/tambor_elevacion_frontal.jpg",
+      "assets/images/nuevas/tambor_elevacion_oblicuo.jpg"
+    ]
+  },
+  {
+    name:"Lupa de la brújula",
+    category:"Orientación",
+    description:"Permite observar la brújula integrada en el goniómetro y comprobar su lectura durante la orientación.",
+    tags:["Brújula","Orientación"],
+    view:"vista_frontal",
+    viewTitle:"Vista frontal",
+    marker:[49,49],
+    photos:["assets/images/nuevas/lupa_brujula.jpg"]
+  },
+  {
+    name:"Tornillo y palanca de movimiento particular",
+    category:"Dirección",
+    description:"El tornillo proporciona movimiento lento y la palanca movimiento rápido. Al accionarlos se modifica la lectura en dirección.",
+    tags:["Dirección","Movimiento particular"],
+    view:"vista_lateral_derecha",
+    viewTitle:"Vista lateral derecha",
+    marker:[72,61],
+    photos:["assets/images/nuevas/movimiento_particular.jpg"]
+  },
+  {
+    name:"Tambor y platillo de dirección",
+    category:"Dirección",
+    description:"Permite medir los ángulos en dirección y muestra la lectura asociada al movimiento particular.",
+    tags:["Dirección","Lectura angular"],
+    view:"vista_frontal",
+    viewTitle:"Vista frontal",
+    marker:[61,64],
+    photos:["assets/images/nuevas/tambor_direccion.jpg"]
+  },
+  {
+    name:"Tornillo y palanca de movimiento general",
+    category:"Dirección",
+    description:"Permite mover el conjunto en dirección sin modificar la lectura establecida en el instrumento.",
+    tags:["Dirección","Movimiento general"],
+    view:"vista_oblicua",
+    viewTitle:"Vista oblicua",
+    marker:[70,65],
+    photos:["assets/images/nuevas/movimiento_general.jpg"]
+  },
+  {
+    name:"Tornillos nivelantes",
+    category:"Nivelación",
+    description:"Los tres tornillos nivelantes permiten inclinar la parte superior del instrumento hasta centrar las burbujas de los niveles.",
+    tags:["Nivelación","Base"],
+    view:"vista_frontal",
+    viewTitle:"Vista frontal",
+    marker:[35,82],
+    photos:["assets/images/nuevas/tornillos_nivelantes.jpg"]
+  },
+  {
+    name:"Brújula",
+    category:"Orientación",
+    description:"Indica la posición del norte magnético y proporciona una referencia para orientar el goniómetro.",
+    tags:["Orientación","Norte magnético"],
+    view:"vista_frontal",
+    viewTitle:"Vista frontal",
+    marker:[50,42],
+    photos:["assets/images/nuevas/brujula_superior.jpg"]
+  },
+  {
+    name:"Nivel esférico",
+    category:"Nivelación",
+    description:"Permite realizar la nivelación inicial o en grueso antes de efectuar el ajuste fino.",
+    tags:["Nivelación","Ajuste inicial"],
+    view:"vista_frontal",
+    viewTitle:"Vista frontal",
+    marker:[50,75],
+    photos:["assets/images/nuevas/nivel_esferico.jpg"]
+  },
+  {
+    name:"Palanca de liberación de la brújula",
+    category:"Orientación",
+    description:"Libera la brújula para que pueda moverse libremente y adoptar la dirección del norte magnético.",
+    tags:["Brújula","Liberación"],
+    view:"vista_lateral_derecha",
+    viewTitle:"Vista lateral derecha",
+    marker:[69,48],
+    photos:["assets/images/nuevas/palanca_brujula.jpg"]
+  },
+  {
+    name:"Nivel tubular",
+    category:"Nivelación",
+    description:"Permite efectuar la nivelación fina del goniómetro una vez completado el ajuste inicial.",
+    tags:["Nivelación","Ajuste fino"],
+    view:"vista_lateral_izquierda",
+    viewTitle:"Vista lateral izquierda",
+    marker:[50,61],
+    photos:["assets/images/nuevas/nivel_tubular.jpg"]
+  }
 ];
 
-let current = 0;
-const menu = document.getElementById("componentMenu");
+const viewFiles = {
+  vista_frontal:"assets/images/nuevas/vista_frontal.jpg",
+  vista_lateral_derecha:"assets/images/nuevas/vista_lateral_derecha.jpg",
+  vista_lateral_izquierda:"assets/images/nuevas/vista_lateral_izquierda.jpg",
+  vista_posterior:"assets/images/nuevas/vista_posterior.jpg",
+  vista_oblicua:"assets/images/nuevas/vista_oblicua.jpg"
+};
 
-function selectComponent(index){
-  current = index;
-  const c = components[index];
-  document.getElementById("componentNumber").textContent = index + 1;
-  document.getElementById("componentCategory").textContent = c.category;
-  document.getElementById("componentName").textContent = c.name;
-  document.getElementById("componentDescription").textContent = c.description;
-  document.getElementById("componentImage").src = c.image;
-  document.getElementById("componentImage").alt = c.name;
-  document.getElementById("componentTags").innerHTML = c.tags.map(t => `<span>${t}</span>`).join("");
-  [...menu.children].forEach((b,i) => b.classList.toggle("active", i === index));
+let currentIndex = 0;
+let currentPhotoIndex = 0;
+
+const menu = document.getElementById("componentMenu");
+const locationImage = document.getElementById("locationImage");
+const locationMarker = document.getElementById("locationMarker");
+const detailImage = document.getElementById("detailImage");
+const detailThumbs = document.getElementById("detailThumbs");
+
+function renderMenu(){
+  menu.innerHTML = "";
+  components.forEach((component,index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    if(index === currentIndex) button.classList.add("active");
+    button.innerHTML = `<span>${index+1}</span><strong>${component.name}</strong>`;
+    button.addEventListener("click", () => selectComponent(index));
+    menu.appendChild(button);
+  });
 }
 
-components.forEach((c,i) => {
-  const b = document.createElement("button");
-  b.textContent = `${i+1}. ${c.name}`;
-  b.addEventListener("click", () => selectComponent(i));
-  menu.appendChild(b);
-});
-selectComponent(0);
+function renderThumbs(component){
+  detailThumbs.innerHTML = "";
+  if(component.photos.length < 2){
+    detailThumbs.hidden = true;
+    return;
+  }
+  detailThumbs.hidden = false;
+  component.photos.forEach((src,index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    if(index === currentPhotoIndex) button.classList.add("active");
+    button.innerHTML = `<img src="${src}" alt="Vista ${index+1} de ${component.name}">`;
+    button.addEventListener("click", () => {
+      currentPhotoIndex = index;
+      detailImage.src = src;
+      renderThumbs(component);
+    });
+    detailThumbs.appendChild(button);
+  });
+}
+
+function selectComponent(index){
+  currentIndex = (index + components.length) % components.length;
+  currentPhotoIndex = 0;
+  const component = components[currentIndex];
+
+  document.getElementById("componentCounter").textContent = `${currentIndex+1} / ${components.length}`;
+  document.getElementById("locationViewTitle").textContent = component.viewTitle;
+  locationImage.src = viewFiles[component.view];
+  locationImage.alt = `${component.viewTitle} del G-10`;
+  locationMarker.style.left = `${component.marker[0]}%`;
+  locationMarker.style.top = `${component.marker[1]}%`;
+  document.getElementById("markerNumber").textContent = currentIndex+1;
+
+  document.getElementById("detailNumber").textContent = currentIndex+1;
+  document.getElementById("detailCategory").textContent = component.category;
+  document.getElementById("detailName").textContent = component.name;
+  document.getElementById("detailDescription").textContent = component.description;
+  document.getElementById("detailTags").innerHTML = component.tags.map(tag => `<span>${tag}</span>`).join("");
+  detailImage.src = component.photos[0];
+  detailImage.alt = `Detalle de ${component.name}`;
+
+  renderMenu();
+  renderThumbs(component);
+}
+
+document.getElementById("previousComponent").addEventListener("click", () => selectComponent(currentIndex-1));
+document.getElementById("nextComponent").addEventListener("click", () => selectComponent(currentIndex+1));
 
 const modal = document.getElementById("imageModal");
 const modalImage = document.getElementById("modalImage");
 const modalTitle = document.getElementById("modalTitle");
+
 function openModal(src,title){
   modalImage.src = src;
   modalImage.alt = title;
   modalTitle.textContent = title;
   modal.showModal();
 }
-document.getElementById("expandComponent").addEventListener("click", () => openModal(components[current].image,components[current].name));
-document.getElementById("openCompass").addEventListener("click", () => openModal("assets/images/lupa_brujula.png","Lupa de la brújula"));
-document.querySelectorAll("[data-image]").forEach(b => b.addEventListener("click", () => openModal(b.dataset.image,b.dataset.title)));
+
+document.getElementById("expandImage").addEventListener("click", () => {
+  const component = components[currentIndex];
+  openModal(detailImage.src, component.name);
+});
+document.querySelectorAll("[data-image]").forEach(button => {
+  button.addEventListener("click", () => openModal(button.dataset.image,button.dataset.title));
+});
+document.getElementById("openCompassPhoto").addEventListener("click", () => {
+  openModal("assets/images/nuevas/brujula_superior.jpg","Brújula — vista superior");
+});
 document.getElementById("closeModal").addEventListener("click", () => modal.close());
+modal.addEventListener("click", event => {
+  const rect = modal.getBoundingClientRect();
+  if(event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom){
+    modal.close();
+  }
+});
 
 const videoData = {
-  correcto:{src:"assets/videos/procedimiento_correcto.mp4",status:"Procedimiento correcto",cls:"good",desc:"Secuencia de nivelación con el instrumento correctamente ajustado."},
-  incorrecto:{src:"assets/videos/procedimiento_incorrecto.mp4",status:"Caso de contraste",cls:"warning",desc:"Comportamiento que permite identificar una posible descorrección del nivel."}
+  correcto:{
+    src:"assets/videos/procedimiento_correcto.mp4",
+    status:"Procedimiento correcto",
+    cls:"good",
+    description:"Secuencia de nivelación con el instrumento correctamente ajustado."
+  },
+  incorrecto:{
+    src:"assets/videos/procedimiento_incorrecto.mp4",
+    status:"Caso de contraste",
+    cls:"warning",
+    description:"Comportamiento que permite identificar una posible descorrección del nivel."
+  }
 };
-document.querySelectorAll(".video-tab").forEach(b => b.addEventListener("click", () => {
-  document.querySelectorAll(".video-tab").forEach(x => x.classList.remove("active"));
-  b.classList.add("active");
-  const v = videoData[b.dataset.video];
-  const video = document.getElementById("procedureVideo");
-  video.src = v.src; video.load();
-  const status = document.getElementById("videoStatus");
-  status.textContent = v.status; status.className = `status ${v.cls}`;
-  document.getElementById("videoDescription").textContent = v.desc;
-}));
+document.querySelectorAll(".video-tab").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".video-tab").forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+    const data = videoData[button.dataset.video];
+    const video = document.getElementById("procedureVideo");
+    video.src = data.src;
+    video.load();
+    const status = document.getElementById("videoStatus");
+    status.textContent = data.status;
+    status.className = `status ${data.cls}`;
+    document.getElementById("videoDescription").textContent = data.description;
+  });
+});
 
 const sidebar = document.getElementById("sidebar");
 document.getElementById("menuButton").addEventListener("click", () => sidebar.classList.toggle("open"));
-document.querySelectorAll(".nav-link").forEach(link => link.addEventListener("click", () => {
-  document.querySelectorAll(".nav-link").forEach(x => x.classList.remove("active"));
-  link.classList.add("active");
-  sidebar.classList.remove("open");
-}));
+document.querySelectorAll(".nav-link:not(.disabled)").forEach(link => {
+  link.addEventListener("click", () => sidebar.classList.remove("open"));
+});
+
+const sections = [...document.querySelectorAll(".page-section")];
+const navLinks = [...document.querySelectorAll(".nav-link:not(.disabled)")];
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting) return;
+    navLinks.forEach(link => link.classList.toggle("active",link.getAttribute("href") === `#${entry.target.id}`));
+    const heading = entry.target.querySelector("h2");
+    document.getElementById("pageTitle").textContent = heading ? heading.textContent : "Goniómetro Wild G-10";
+  });
+},{rootMargin:"-35% 0px -55% 0px",threshold:0});
+sections.forEach(section => observer.observe(section));
+
+selectComponent(0);
