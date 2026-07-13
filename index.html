@@ -185,26 +185,56 @@
             <span class="eyebrow">03 · Puesta en estación</span>
             <h2>Nivelación del instrumento</h2>
           </div>
-          <p>Comparación visual entre el procedimiento con el nivel corregido y el caso descorregido.</p>
+          <p>El nivel puede estar bien ajustado o desajustado. En ambos casos se puede nivelar el goniómetro, pero cambia la forma de comprobar la burbuja.</p>
         </div>
 
-        <div class="procedure-layout">
-          <div class="steps">
-            <article><span>1</span><div><h3>Colocación inicial</h3><p>Sitúe el nivel paralelo al plano vertical que contiene dos tornillos nivelantes.</p></div></article>
-            <article><span>2</span><div><h3>Centrado inicial</h3><p>Accione ambos tornillos en sentido contrario hasta centrar la burbuja.</p></div></article>
-            <article><span>3</span><div><h3>Giro de 90°</h3><p>Gire el instrumento alrededor del eje principal.</p></div></article>
-            <article><span>4</span><div><h3>Ajuste final</h3><p>Centre la burbuja con el tercer tornillo y verifique su estabilidad.</p></div></article>
+        <div class="procedure-case">
+          <div class="panel-heading">
+            <span class="mini-title">NIVEL CORREGIDO · BIEN AJUSTADO</span>
+            <p>Al girar el instrumento, la burbuja sigue centrada entre sus marcas.</p>
           </div>
 
-          <div class="video-panel">
-            <div class="video-tabs">
-              <button class="video-tab active" data-video="correcto">Nivel corregido</button>
-              <button class="video-tab" data-video="incorrecto">Nivel descorregido</button>
+          <div class="procedure-layout">
+            <div class="steps" id="procedureSteps">
+              <article><span>1</span><div><h3>Coloque el nivel</h3><p>Póngalo paralelo a la línea formada por dos tornillos nivelantes, por ejemplo T1 y T2.</p></div></article>
+              <article><span>2</span><div><h3>Centre la burbuja</h3><p>Gire T1 y T2 en sentidos contrarios hasta que la burbuja quede centrada.</p></div></article>
+              <article><span>3</span><div><h3>Gire 90°</h3><p>Coloque el nivel perpendicular a la línea formada por T1 y T2.</p></div></article>
+              <article><span>4</span><div><h3>Ajuste con T3</h3><p>Centre de nuevo la burbuja actuando solamente sobre T3.</p></div></article>
+              <article><span>5</span><div><h3>Compruebe</h3><p>Gire el nivel a otra posición. Si la burbuja sigue centrada, el nivel está bien ajustado. Si se mueve, está desajustado.</p></div></article>
+              <article><span>i</span><div><h3>Importante</h3><p>Aunque el nivel parezca estar bien, conviene comprobarlo siempre como si pudiera estar desajustado.</p></div></article>
             </div>
-            <video id="procedureVideo" controls preload="metadata" src="assets/videos/procedimiento_correcto.mp4"></video>
-            <div class="video-caption">
-              <span id="videoStatus" class="status good">Procedimiento correcto</span>
-              <p id="videoDescription">Secuencia de nivelación con el instrumento correctamente ajustado.</p>
+
+            <div class="video-panel">
+              <video id="procedureVideo" controls preload="metadata" src="assets/videos/procedimiento_correcto.mp4"></video>
+              <div class="video-caption">
+                <span id="videoStatus" class="status good">Nivel bien ajustado</span>
+                <p id="videoDescription">La burbuja permanece centrada cuando se gira el instrumento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="procedure-case" style="margin-top:32px;">
+          <div class="panel-heading">
+            <span class="mini-title">NIVEL DESCORREGIDO · DESAJUSTADO</span>
+            <p>Al girar el nivel 180°, la burbuja se desplaza y hay que obtener unas nuevas referencias.</p>
+          </div>
+
+          <div class="procedure-layout">
+            <div class="steps">
+              <article><span>1</span><div><h3>Coloque el nivel</h3><p>Póngalo paralelo a la línea formada por T1 y T2.</p></div></article>
+              <article><span>2</span><div><h3>Centre la burbuja</h3><p>Gire T1 y T2 en sentidos contrarios hasta centrarla.</p></div></article>
+              <article><span>3</span><div><h3>Gire 180°</h3><p>Si el nivel está desajustado, la burbuja se desplazará.</p></div></article>
+              <article><span>4</span><div><h3>Corrija solo la mitad</h3><p>Mueva T1 y T2 hasta corregir la mitad del desplazamiento. La nueva posición de la burbuja será la referencia que debe utilizar.</p></div></article>
+              <article><span>5</span><div><h3>Termine la nivelación</h3><p>Continúe como en el caso anterior: gire 90°, ajuste con T3 y compruebe el nivel usando las nuevas referencias.</p></div></article>
+            </div>
+
+            <div class="video-panel">
+              <video controls preload="metadata" src="assets/videos/procedimiento_incorrecto.mp4"></video>
+              <div class="video-caption">
+                <span class="status warning">Nivel desajustado</span>
+                <p>El vídeo muestra cómo se desplaza la burbuja y cómo se fija una nueva referencia de nivelación.</p>
+              </div>
             </div>
           </div>
         </div>
