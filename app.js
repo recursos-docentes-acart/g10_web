@@ -6,7 +6,7 @@ const components = [
     tags:["Observación","Sistema óptico"],
     view:"vista_oblicua",
     viewTitle:"Vista oblicua",
-    marker:[43,20],
+    highlights:[[32,17,24,20,"ellipse"]],
     photos:["assets/images/nuevas/anteojo_acodado.jpg"]
   },
   {
@@ -16,7 +16,7 @@ const components = [
     tags:["Elevación","Lectura angular"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
-    marker:[60,24],
+    highlights:[[47,23,20,19,"ellipse"]],
     photos:[
       "assets/images/nuevas/tambor_elevacion_frontal.jpg",
       "assets/images/nuevas/tambor_elevacion_oblicuo.jpg"
@@ -29,7 +29,7 @@ const components = [
     tags:["Brújula","Orientación"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
-    marker:[49,49],
+    highlights:[[41,46,16,9,"rounded"]],
     photos:["assets/images/nuevas/lupa_brujula.jpg"]
   },
   {
@@ -39,7 +39,7 @@ const components = [
     tags:["Dirección","Movimiento particular"],
     view:"vista_lateral_derecha",
     viewTitle:"Vista lateral derecha",
-    marker:[72,61],
+    highlights:[[61,53,22,17,"rounded"]],
     photos:["assets/images/nuevas/movimiento_particular.jpg"]
   },
   {
@@ -49,7 +49,7 @@ const components = [
     tags:["Dirección","Lectura angular"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
-    marker:[61,64],
+    highlights:[[47,56,22,16,"ellipse"]],
     photos:["assets/images/nuevas/tambor_direccion.jpg"]
   },
   {
@@ -59,7 +59,7 @@ const components = [
     tags:["Dirección","Movimiento general"],
     view:"vista_oblicua",
     viewTitle:"Vista oblicua",
-    marker:[70,65],
+    highlights:[[45,56,25,18,"rounded"]],
     photos:["assets/images/nuevas/movimiento_general.jpg"]
   },
   {
@@ -69,7 +69,11 @@ const components = [
     tags:["Nivelación","Base"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
-    marker:[35,82],
+    highlights:[
+      [27,67,15,12,"ellipse"],
+      [39,70,16,13,"ellipse"],
+      [47,78,16,12,"ellipse"]
+    ],
     photos:["assets/images/nuevas/tornillos_nivelantes.jpg"]
   },
   {
@@ -79,7 +83,7 @@ const components = [
     tags:["Orientación","Norte magnético"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
-    marker:[50,42],
+    highlights:[[33,39,29,16,"ellipse"]],
     photos:["assets/images/nuevas/brujula_superior.jpg"]
   },
   {
@@ -89,7 +93,7 @@ const components = [
     tags:["Nivelación","Ajuste inicial"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
-    marker:[50,75],
+    highlights:[[39,66,17,12,"ellipse"]],
     photos:["assets/images/nuevas/nivel_esferico.jpg"]
   },
   {
@@ -99,7 +103,7 @@ const components = [
     tags:["Brújula","Liberación"],
     view:"vista_lateral_derecha",
     viewTitle:"Vista lateral derecha",
-    marker:[69,48],
+    highlights:[[66,44,15,13,"rounded"]],
     photos:["assets/images/nuevas/palanca_brujula.jpg"]
   },
   {
@@ -109,7 +113,7 @@ const components = [
     tags:["Nivelación","Ajuste fino"],
     view:"vista_lateral_izquierda",
     viewTitle:"Vista lateral izquierda",
-    marker:[50,61],
+    highlights:[[35,55,35,11,"rounded"]],
     photos:["assets/images/nuevas/nivel_tubular.jpg"]
   }
 ];
@@ -127,9 +131,48 @@ let currentPhotoIndex = 0;
 
 const menu = document.getElementById("componentMenu");
 const locationImage = document.getElementById("locationImage");
-const locationMarker = document.getElementById("locationMarker");
 const detailImage = document.getElementById("detailImage");
 const detailThumbs = document.getElementById("detailThumbs");
+
+let locationOverlay = document.getElementById("locationOverlay");
+
+if(!locationOverlay){
+  locationOverlay = document.createElement("div");
+  locationOverlay.id = "locationOverlay";
+  locationOverlay.className = "location-overlay";
+  locationOverlay.setAttribute("aria-hidden","true");
+
+  const previousLocationMarker = document.getElementById("locationMarker");
+
+  if(previousLocationMarker){
+    previousLocationMarker.replaceWith(locationOverlay);
+  }else{
+    locationImage.insertAdjacentElement("afterend", locationOverlay);
+  }
+}
+
+function renderHighlights(component){
+  locationOverlay.innerHTML = "";
+
+  component.highlights.forEach((region,index) => {
+    const [left,top,width,height,shape] = region;
+    const highlight = document.createElement("div");
+    highlight.className = `location-highlight ${shape}`;
+    highlight.style.left = `${left}%`;
+    highlight.style.top = `${top}%`;
+    highlight.style.width = `${width}%`;
+    highlight.style.height = `${height}%`;
+
+    if(index === 0){
+      const badge = document.createElement("span");
+      badge.className = "highlight-badge";
+      badge.textContent = currentIndex + 1;
+      highlight.appendChild(badge);
+    }
+
+    locationOverlay.appendChild(highlight);
+  });
+}
 
 function renderMenu(){
   menu.innerHTML = "";
@@ -173,9 +216,7 @@ function selectComponent(index){
   document.getElementById("locationViewTitle").textContent = component.viewTitle;
   locationImage.src = viewFiles[component.view];
   locationImage.alt = `${component.viewTitle} del G-10`;
-  locationMarker.style.left = `${component.marker[0]}%`;
-  locationMarker.style.top = `${component.marker[1]}%`;
-  document.getElementById("markerNumber").textContent = currentIndex+1;
+  renderHighlights(component);
 
   document.getElementById("detailNumber").textContent = currentIndex+1;
   document.getElementById("detailCategory").textContent = component.category;
