@@ -1,21 +1,23 @@
-# Goniómetro Wild G-10 — versión con fotografías actualizadas
+# Goniómetro Wild G-10 — recurso completo
 
-Esta versión sustituye las capturas de la aplicación antigua por fotografías actuales del instrumento.
+Versión integrada del recurso didáctico.
 
-## Cambios principales
-- Cinco vistas generales recortadas y optimizadas para web.
-- Fotografías de detalle para todos los componentes.
-- Fotografía cenital de la brújula.
-- Sección «Descripción» reorganizada:
-  - listado correlativo;
-  - vista general con marcador;
-  - fotografía de detalle;
-  - función del componente.
-- Se mantienen los vídeos de puesta en estación y de la lupa de la brújula.
-- La práctica de lecturas sigue reservada para una segunda fase.
+## Contenido
 
-## Uso local
-Abra `index.html` con un navegador moderno.
+1. Generalidades y características.
+2. Descripción interactiva de componentes.
+3. Nivelación con nivel corregido y descorregido.
+4. Uso de la brújula.
+5. Práctica de puntería y lectura de tambores H/V.
 
-## Actualización de GitHub Pages
-Copie el contenido de esta carpeta en la raíz del repositorio `g10_web`, sustituya los archivos anteriores y haga commit y push.
+## Estructura
+
+- `index.html`: recurso principal.
+- `app.js` y `styles.css`: funcionamiento y diseño de la parte teórica.
+- `assets/`: fotografías y vídeos del G-10.
+- `practica/`: simulador y ejercicios de lecturas.
+  - `practica/ejercicios.html`: selección de ejercicios.
+  - `practica/index.html`: simulador y práctica libre.
+
+
+

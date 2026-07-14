@@ -656,3 +656,12 @@ dialog::backdrop{background:rgba(7,18,29,.78)}
   .video-caption{display:block}
   .video-caption p{margin-top:10px}
 }
+
+
+/* Integración de la práctica de lecturas */
+.phase-card .eyebrow{color:#74df91}
+.phase-card .actions{justify-content:center}
+.phase-card .button.primary{background:var(--green);color:#fff}
+.phase-card .button.primary:hover{background:#16ae86}
+.phase-card .button.secondary{background:#fff;color:var(--nav);border-color:#fff}
+.phase-card .button.secondary:hover{background:#edf5f2;color:var(--nav)}
