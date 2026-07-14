@@ -48,6 +48,7 @@ button{color:inherit}
   font-size:1.9rem;
   font-weight:900;
   color:#74df91;
+  white-space:nowrap;
 }
 .brand strong,.brand span{display:block}
 .brand span{font-size:.82rem;color:#b7c4ce}

@@ -50,7 +50,7 @@
     <p id="exerciseFeedback" class="feedback" aria-live="polite"></p>
   </section>
 
-  <section class="simulator-grid">
+  <section class="simulator-layout">
     <article class="panel panorama-panel">
       <div class="panel-heading">
         <div><span class="eyebrow">CAMPO DE OBSERVACIÓN</span><h3>Panorámica calibrada</h3></div>
@@ -68,7 +68,8 @@
       <p class="panorama-note">Las reglas ayudan a localizar el sector. La lectura exacta debe obtenerse en los tambores H y V.</p>
     </article>
 
-    <article class="panel visor-panel">
+    <div class="instrument-stage">
+      <article class="panel visor-panel">
       <div class="panel-heading">
         <div><span class="eyebrow">ANTEOJO</span><h3>Vista simulada</h3></div>
         <span class="hint">Campo visual 165ºº</span>
@@ -88,7 +89,6 @@
           <text x="500" y="302">100</text>
         </svg>
       </div>
-      <p class="scope-note">Se ha sustituido la panorámica y se ha recreado la vista del anteojo para ganar nitidez. Aun así, el límite real depende de la resolución de la imagen base.</p>
     </article>
 
     <article class="panel controls-panel">
@@ -96,7 +96,7 @@
         <div><span class="eyebrow">MANDOS Y TAMBORES</span><h3>Lecturas H y V</h3></div>
       </div>
 
-      <div class="control-block">
+      <div class="control-block horizontal-control">
         <div class="control-title"><label for="directionRange">Movimiento H</label><span>Tambor H</span></div>
         <input id="directionRange" type="range" min="1200" max="5000" value="3100" step="1">
         <div class="button-row">
@@ -108,7 +108,7 @@
         <canvas id="drumH" class="drum-canvas" width="560" height="230" aria-label="Tambor horizontal"></canvas>
       </div>
 
-      <div class="control-block">
+      <div class="control-block vertical-control">
         <div class="control-title"><label for="elevationRange">Movimiento V</label><span>Tambor V</span></div>
         <input id="elevationRange" type="range" min="1800" max="3600" value="2700" step="1">
         <div class="button-row">
@@ -120,6 +120,7 @@
         <canvas id="drumV" class="drum-canvas" width="560" height="230" aria-label="Tambor vertical"></canvas>
       </div>
     </article>
+    </div>
   </section>
 
   <section class="method-note">

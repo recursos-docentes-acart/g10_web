@@ -33,7 +33,26 @@ main{padding:30px clamp(18px,4vw,56px) 60px}
 .feedback.success{color:#087455}
 .feedback.error{color:var(--danger)}
 
-.simulator-grid{display:grid;grid-template-columns:1.25fr .9fr .9fr;gap:18px;align-items:start}
+.simulator-layout{
+  display:grid;
+  gap:18px;
+}
+
+.panorama-panel{
+  width:100%;
+}
+
+.instrument-stage{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);
+  gap:18px;
+  align-items:start;
+}
+
+.visor-panel,
+.controls-panel{
+  min-width:0;
+}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px}
 .panel-heading{display:flex;align-items:start;justify-content:space-between;gap:16px;margin-bottom:14px}
 .panel-heading h3{margin:5px 0 0;font-size:1.2rem}
@@ -63,7 +82,11 @@ main{padding:30px clamp(18px,4vw,56px) 60px}
 .reticle text{fill:rgba(42,42,42,.75);font-size:16px;font-family:Arial,sans-serif}
 .scope-note{color:var(--muted);margin-top:12px;font-size:.9rem}
 
-.controls-panel{display:grid;gap:18px}
+.controls-panel{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
 .control-block{border-top:1px solid var(--line);padding-top:16px}
 .control-block:first-of-type{border-top:0;padding-top:0}
 .control-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
@@ -89,19 +112,340 @@ input[type="range"]{width:100%;accent-color:var(--green)}
 .method-note p,.method-note li{color:var(--muted)}
 .method-note ul,.method-note ol{margin-bottom:0}
 
-@media(max-width:1280px){
-  .simulator-grid{grid-template-columns:1fr 1fr}
-  .controls-panel{grid-column:1/-1}
-  .exercise-banner{grid-template-columns:1fr}
+@media(max-width:1100px){
+  .instrument-stage{
+    grid-template-columns:minmax(0,1fr) minmax(320px,.82fr);
+  }
+
+  .eyepiece{
+    width:min(100%,500px);
+  }
+
+  .drum-canvas{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+  }
+
+  .exercise-banner{
+    grid-template-columns:1fr;
+  }
 }
+
 @media(max-width:820px){
-  .topbar{padding:16px 20px;align-items:flex-start}
-  .topbar nav{margin-top:4px}
-  .intro{display:block}
-  .simulator-grid,.exercise-grid{grid-template-columns:1fr}
-  .answer-form{grid-template-columns:1fr 1fr}
-  .calibrated-panorama{padding-left:46px}
-  .horizontal-ruler{left:46px}
-  .vertical-ruler{width:46px}
-  .panorama-note{margin-left:46px}
+  .topbar{
+    padding:16px 20px;
+    align-items:flex-start;
+  }
+
+  .topbar nav{
+    margin-top:4px;
+  }
+
+  .intro{
+    display:block;
+  }
+
+  .intro #resetButton{
+    margin-top:16px;
+  }
+
+  .instrument-stage{
+    grid-template-columns:minmax(0,1fr) minmax(118px,34vw);
+    grid-template-areas:
+      "visor vertical"
+      "horizontal horizontal";
+    gap:12px;
+    align-items:start;
+  }
+
+  .visor-panel{
+    grid-area:visor;
+    padding:14px;
+  }
+
+  .controls-panel{
+    display:contents;
+  }
+
+  .controls-panel>.panel-heading{
+    display:none;
+  }
+
+  .vertical-control{
+    grid-area:vertical;
+    min-width:0;
+    padding:10px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:var(--surface);
+    box-shadow:var(--shadow);
+  }
+
+  .horizontal-control{
+    grid-area:horizontal;
+    min-width:0;
+    padding:12px 14px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:var(--surface);
+    box-shadow:var(--shadow);
+  }
+
+  .control-block,
+  .control-block:first-of-type{
+    border-top:0;
+  }
+
+  .control-title{
+    display:block;
+    margin-bottom:8px;
+  }
+
+  .control-title label{
+    display:block;
+    font-size:.78rem;
+  }
+
+  .control-title span{
+    display:block;
+    margin-top:2px;
+    font-size:.6rem;
+  }
+
+  .vertical-control input[type="range"]{
+    writing-mode:vertical-lr;
+    direction:rtl;
+    width:24px;
+    height:190px;
+    margin:4px auto 10px;
+    display:block;
+  }
+
+  .vertical-control .button-row{
+    grid-template-columns:1fr 1fr;
+    gap:5px;
+    margin:6px 0 8px;
+  }
+
+  .vertical-control .button-row button{
+    min-width:0;
+    padding:8px 2px;
+    font-size:.82rem;
+  }
+
+  .vertical-control .drum-canvas{
+    width:100%;
+    height:auto;
+    max-width:140px;
+    margin:0 auto;
+  }
+
+  .horizontal-control{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(180px,.8fr);
+    grid-template-areas:
+      "title drum"
+      "range drum"
+      "buttons drum";
+    column-gap:12px;
+    align-items:center;
+  }
+
+  .horizontal-control .control-title{
+    grid-area:title;
+    margin:0;
+  }
+
+  .horizontal-control input[type="range"]{
+    grid-area:range;
+    width:100%;
+  }
+
+  .horizontal-control .button-row{
+    grid-area:buttons;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:5px;
+    margin:6px 0 0;
+  }
+
+  .horizontal-control .button-row button{
+    min-width:0;
+    padding:9px 3px;
+    font-size:.9rem;
+  }
+
+  .horizontal-control .drum-canvas{
+    grid-area:drum;
+    display:block;
+    width:100%;
+    max-width:260px;
+    height:auto;
+    justify-self:end;
+  }
+
+  .eyepiece{
+    width:min(100%,430px);
+    border-width:12px;
+  }
+
+  .scope-note{
+    display:none;
+  }
+
+  .answer-form{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .calibrated-panorama{
+    padding-left:46px;
+  }
+
+  .horizontal-ruler{
+    left:46px;
+  }
+
+  .vertical-ruler{
+    width:46px;
+  }
+
+  .panorama-note{
+    margin-left:46px;
+  }
+}
+
+@media(max-width:560px){
+  .topbar{
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .topbar nav{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .topbar nav a{
+    width:100%;
+    text-align:center;
+  }
+
+  main{
+    padding:20px 10px 40px;
+  }
+
+  .intro h2{
+    font-size:1.75rem;
+  }
+
+  .intro #resetButton{
+    width:100%;
+  }
+
+  .panel{
+    padding:12px;
+    border-radius:14px;
+  }
+
+  .panel-heading{
+    display:block;
+  }
+
+  .panel-heading .hint{
+    display:inline-block;
+    margin-top:8px;
+  }
+
+  .calibrated-panorama{
+    padding-top:34px;
+    padding-left:38px;
+  }
+
+  .horizontal-ruler{
+    left:38px;
+    height:34px;
+  }
+
+  .vertical-ruler{
+    width:38px;
+    top:34px;
+  }
+
+  .ruler-label{
+    font-size:.56rem;
+  }
+
+  .panorama-note{
+    margin-left:38px;
+  }
+
+  .instrument-stage{
+    grid-template-columns:minmax(0,1fr) 112px;
+    gap:8px;
+  }
+
+  .visor-panel{
+    padding:10px;
+  }
+
+  .visor-panel .panel-heading h3{
+    font-size:1rem;
+  }
+
+  .visor-panel .eyebrow,
+  .visor-panel .hint{
+    display:none;
+  }
+
+  .eyepiece{
+    width:100%;
+    border-width:9px;
+  }
+
+  .vertical-control{
+    padding:8px 6px;
+  }
+
+  .vertical-control input[type="range"]{
+    height:145px;
+  }
+
+  .vertical-control .button-row button{
+    font-size:.74rem;
+    padding:7px 1px;
+  }
+
+  .vertical-control .drum-canvas{
+    max-width:104px;
+  }
+
+  .horizontal-control{
+    grid-template-columns:minmax(0,1fr) 150px;
+    padding:10px;
+    column-gap:8px;
+  }
+
+  .horizontal-control .drum-canvas{
+    max-width:150px;
+  }
+
+  .horizontal-control .button-row button{
+    font-size:.8rem;
+    padding:8px 1px;
+  }
+
+  .answer-form{
+    grid-template-columns:1fr;
+  }
+
+  .answer-form .primary,
+  .answer-form .secondary{
+    width:100%;
+  }
+
+  .exercise-banner{
+    padding:14px;
+  }
 }
