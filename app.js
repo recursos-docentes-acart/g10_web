@@ -2,7 +2,7 @@ const components = [
   {
     name:"Anteojo acodado",
     category:"Observación",
-    description:"Proporciona la visual de la dirección hacia la que apunta el goniómetro y permite enfocar el objetivo.",
+    description:"Proporciona una imagen directa con 5 aumentos. Permite realizar la puntería, enfocar el objetivo y ajustar el ocular entre -6 y +6 dioptrías.",
     tags:["Observación","Sistema óptico"],
     view:"vista_oblicua",
     viewTitle:"Vista oblicua",
@@ -12,8 +12,7 @@ const components = [
   {
     name:"Tambor y platillo de elevación",
     category:"Elevación",
-    description:"Permite medir los ángulos de elevación. La lectura varía con el movimiento vertical del anteojo.",
-    tags:["Elevación","Lectura angular"],
+    description:"Permiten obtener la lectura vertical del goniómetro. El tambor proporciona las centenas de milésima y el platillo las decenas y unidades.",    tags:["Elevación","Lectura angular"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
     highlights:[[47,23,20,19,"ellipse"]],
@@ -25,17 +24,17 @@ const components = [
   {
     name:"Lupa de la brújula",
     category:"Orientación",
-    description:"Permite observar la brújula integrada en el goniómetro y comprobar su lectura durante la orientación.",
+    description:"Permite observar la aguja imantada durante la orientación y comprobar su coincidencia con la referencia del goniómetro.",
     tags:["Brújula","Orientación"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
-    highlights:[[41,46,16,9,"rounded"]],
+    highlights:[[37,50,16,9,"rounded"]],
     photos:["assets/images/nuevas/lupa_brujula.jpg"]
   },
   {
     name:"Tornillo y palanca de movimiento particular",
     category:"Dirección",
-    description:"El tornillo proporciona movimiento lento y la palanca movimiento rápido. Al accionarlos se modifica la lectura en dirección.",
+    description:"El tornillo proporciona el movimiento particular lento y la palanca el movimiento particular rápido. Al accionarlos, la placa de índices se desplaza sobre el limbo horizontal y cambia la lectura en dirección.",
     tags:["Dirección","Movimiento particular"],
     view:"vista_lateral_derecha",
     viewTitle:"Vista lateral derecha",
@@ -45,8 +44,7 @@ const components = [
   {
     name:"Tambor y platillo de dirección",
     category:"Dirección",
-    description:"Permite medir los ángulos en dirección y muestra la lectura asociada al movimiento particular.",
-    tags:["Dirección","Lectura angular"],
+    description:"Permiten obtener la lectura vertical del goniómetro. El tambor proporciona las centenas de milésima y el platillo las decenas y unidades.",    tags:["Dirección","Lectura angular"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
     highlights:[[47,56,22,16,"ellipse"]],
@@ -55,31 +53,30 @@ const components = [
   {
     name:"Tornillo y palanca de movimiento general",
     category:"Dirección",
-    description:"Permite mover el conjunto en dirección sin modificar la lectura establecida en el instrumento.",
+    description:"El tornillo proporciona el movimiento general lento y la palanca el movimiento general rápido. La placa de índices y el limbo giran solidariamente, por lo que la lectura establecida no cambia.",
     tags:["Dirección","Movimiento general"],
-    view:"vista_oblicua",
-    viewTitle:"Vista oblicua",
-    highlights:[[45,56,25,18,"rounded"]],
+    view:"vista_posterior",
+    viewTitle:"Vista posterior",
+    highlights:[[25,70,25,18,"rounded"]],
     photos:["assets/images/nuevas/movimiento_general.jpg"]
   },
   {
     name:"Tornillos nivelantes",
     category:"Nivelación",
-    description:"Los tres tornillos nivelantes permiten inclinar la parte superior del instrumento hasta centrar las burbujas de los niveles.",
+    description:"Los tres tornillos nivelantes permiten ajustar la inclinación del instrumento para calar el nivel tubular. Se actúa primero sobre dos tornillos y después sobre el tercero.",
     tags:["Nivelación","Base"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
     highlights:[
-      [27,67,15,12,"ellipse"],
-      [39,70,16,13,"ellipse"],
-      [47,78,16,12,"ellipse"]
+      [22,62,15,12,"ellipse"],
+      [45,73,16,12,"ellipse"]
     ],
     photos:["assets/images/nuevas/tornillos_nivelantes.jpg"]
   },
   {
     name:"Brújula",
     category:"Orientación",
-    description:"Indica la posición del norte magnético y proporciona una referencia para orientar el goniómetro.",
+    description:"La aguja imantada proporciona una referencia aproximada del norte magnético para orientar el goniómetro.",
     tags:["Orientación","Norte magnético"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
@@ -89,31 +86,31 @@ const components = [
   {
     name:"Nivel esférico",
     category:"Nivelación",
-    description:"Permite realizar la nivelación inicial o en grueso antes de efectuar el ajuste fino.",
+    description:"Permite realizar la nivelación inicial o en grueso mediante el ajuste de las patas del trípode.",
     tags:["Nivelación","Ajuste inicial"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
-    highlights:[[39,66,17,12,"ellipse"]],
+    highlights:[[35,66,17,12,"ellipse"]],
     photos:["assets/images/nuevas/nivel_esferico.jpg"]
   },
   {
     name:"Palanca de liberación de la brújula",
     category:"Orientación",
-    description:"Libera la brújula para que pueda moverse libremente y adoptar la dirección del norte magnético.",
+    description:"Al mantenerla accionada libera la aguja imantada para que oscile y busque el norte magnético. Al soltarla, la aguja vuelve a quedar bloqueada.",
     tags:["Brújula","Liberación"],
     view:"vista_lateral_derecha",
     viewTitle:"Vista lateral derecha",
-    highlights:[[66,44,15,13,"rounded"]],
+    highlights:[[65,44,15,13,"rounded"]],
     photos:["assets/images/nuevas/palanca_brujula.jpg"]
   },
   {
     name:"Nivel tubular",
     category:"Nivelación",
-    description:"Permite efectuar la nivelación fina del goniómetro una vez completado el ajuste inicial.",
+    description:"Permite efectuar la nivelación fina del goniómetro mediante los tornillos nivelantes y comprobar si el nivel está corregido o descorregido.",
     tags:["Nivelación","Ajuste fino"],
     view:"vista_lateral_izquierda",
     viewTitle:"Vista lateral izquierda",
-    highlights:[[35,55,35,11,"rounded"]],
+    highlights:[[35,57,35,11,"rounded"]],
     photos:["assets/images/nuevas/nivel_tubular.jpg"]
   }
 ];
@@ -267,13 +264,13 @@ const videoData = {
     src:"assets/videos/procedimiento_correcto.mp4",
     status:"Procedimiento correcto",
     cls:"good",
-    description:"Secuencia de nivelación con el instrumento correctamente ajustado."
+    description:"Secuencia de nivelación cuando la burbuja permanece entre sus referencias de calado al girar el instrumento."
   },
   incorrecto:{
     src:"assets/videos/procedimiento_incorrecto.mp4",
-    status:"Caso de contraste",
+    status:"Nivel descorregido",
     cls:"warning",
-    description:"Comportamiento que permite identificar una posible descorrección del nivel."
+    description:"La burbuja se desplaza al girar el instrumento 180º. Debe corregirse la mitad del desplazamiento y establecer referencias de calado actuales."
   }
 };
 document.querySelectorAll(".video-tab").forEach(button => {
