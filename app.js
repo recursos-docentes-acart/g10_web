@@ -1,153 +1,117 @@
 const components = [
   {
-    name:"Anteojo y ocular",
+    name:"Anteojo acodado",
     category:"Observación",
-    description:"Permiten efectuar la puntería sobre la referencia. El ocular es enfocable para observar con nitidez el retículo y la imagen, que se presenta directa.",
-    tags:["Observación","Puntería"],
+    description:"Proporciona una imagen directa con 5 aumentos. Permite realizar la puntería, enfocar el objetivo y ajustar el ocular entre -6 y +6 dioptrías.",
+    tags:["Observación","Sistema óptico"],
     view:"vista_oblicua",
     viewTitle:"Vista oblicua",
-    highlights:[],
-    photos:["assets/images/nuevas/anteojo_ocular.jpg"]
+    highlights:[[32,17,24,20,"ellipse"]],
+    photos:["assets/images/nuevas/anteojo_acodado.jpg"]
   },
   {
-    name:"Microscopio de lectura",
-    category:"Lectura angular",
-    description:"Permite observar simultáneamente las escalas de los limbos. La lectura horizontal aparece en amarillo y la vertical en azul.",
-    tags:["Lectura","Limbo horizontal","Limbo vertical"],
-    view:"vista_posterior",
-    viewTitle:"Vista posterior",
-    highlights:[],
-    photos:["assets/images/nuevas/microscopio_lectura.jpg"]
-  },
-  {
-    name:"Botón de mando del micrómetro",
-    category:"Lectura angular",
-    description:"Desplaza la escala micrométrica para hacer coincidir las divisiones observadas y completar con precisión las lecturas horizontal y vertical.",
-    tags:["Micrómetro","Lectura angular"],
-    view:"vista_posterior",
-    viewTitle:"Vista posterior",
-    highlights:[],
-    photos:["assets/images/nuevas/mando_micrometro.jpg"]
-  },
-  {
-    name:"Espejo de iluminación",
-    category:"Lectura angular",
-    description:"Dirige la luz ambiente hacia el sistema de lectura. Debe abrirse y orientarse hasta que las escalas se observen con claridad en el microscopio.",
-    tags:["Iluminación","Microscopio"],
-    view:"vista_lateral_izquierda",
-    viewTitle:"Vista lateral izquierda",
-    highlights:[],
-    photos:["assets/images/nuevas/espejo_iluminacion.jpg"]
-  },
-  {
-    name:"Tornillo de movimiento vertical lento",
-    category:"Movimiento vertical",
-    description:"Permite afinar la puntería en el plano vertical después de aproximar el anteojo mediante el desembrague vertical.",
-    tags:["Movimiento vertical","Puntería fina"],
-    view:"vista_lateral_derecha",
-    viewTitle:"Vista lateral derecha",
-    highlights:[],
-    photos:["assets/images/nuevas/movimiento_vertical_lento.jpg"]
-  },
-  {
-    name:"Desembrague vertical",
-    category:"Movimiento vertical",
-    description:"Libera el movimiento vertical del anteojo para realizar una aproximación rápida a la referencia. Al soltarlo, el movimiento vuelve a quedar fijado.",
-    tags:["Movimiento vertical","Movimiento rápido"],
+    name:"Tambor y platillo de elevación",
+    category:"Elevación",
+    description:"Permiten obtener la lectura vertical del goniómetro. El tambor proporciona las centenas de milésima y el platillo las decenas y unidades.",    tags:["Elevación","Lectura angular"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
-    highlights:[],
-    photos:["assets/images/nuevas/desembrague_vertical.jpg"]
+    highlights:[[47,23,20,19,"ellipse"]],
+    photos:[
+      "assets/images/nuevas/tambor_elevacion_frontal.jpg",
+      "assets/images/nuevas/tambor_elevacion_oblicuo.jpg"
+    ]
   },
   {
-    name:"Tornillo de movimiento horizontal lento",
-    category:"Movimiento horizontal",
-    description:"Permite afinar la puntería en dirección mediante el movimiento particular, haciendo variar la lectura horizontal.",
-    tags:["Movimiento horizontal","Puntería fina"],
-    view:"vista_frontal",
-    viewTitle:"Vista frontal",
-    highlights:[],
-    photos:["assets/images/nuevas/movimiento_horizontal_lento.jpg"]
-  },
-  {
-    name:"Desembrague horizontal",
-    category:"Movimiento horizontal",
-    description:"Libera el movimiento horizontal para orientar rápidamente el anteojo hacia una nueva referencia. La puntería se completa con el tornillo de movimiento lento.",
-    tags:["Movimiento horizontal","Movimiento rápido"],
-    view:"vista_frontal",
-    viewTitle:"Vista frontal",
-    highlights:[],
-    photos:["assets/images/nuevas/desembrague_horizontal.jpg"]
-  },
-  {
-    name:"Mando de desplazamiento del limbo",
-    category:"Reiteración",
-    description:"Permite cambiar la posición de origen del limbo entre series de observación y repartir las medidas por distintas zonas de su graduación. El T-20 no dispone de movimiento general lento.",
-    tags:["Limbo horizontal","Reiteración"],
-    view:"vista_frontal",
-    viewTitle:"Vista frontal",
-    highlights:[],
-    photos:["assets/images/nuevas/mando_desplazamiento_limbo.jpg"]
-  },
-  {
-    name:"Brújula circular",
+    name:"Lupa de la brújula",
     category:"Orientación",
-    description:"La aguja imantada proporciona una referencia aproximada del norte magnético para realizar una orientación inicial del aparato.",
-    tags:["Brújula","Norte magnético"],
-    view:"vista_lateral_derecha",
-    viewTitle:"Vista lateral derecha",
-    highlights:[],
-    photos:["assets/images/nuevas/brujula_circular.jpg"]
-  },
-  {
-    name:"Palanca de bloqueo de la brújula",
-    category:"Orientación",
-    description:"Libera la aguja imantada para que oscile y busque el norte magnético. Después de realizar la orientación, permite dejarla nuevamente bloqueada.",
-    tags:["Brújula","Bloqueo"],
-    view:"vista_lateral_derecha",
-    viewTitle:"Vista lateral derecha",
-    highlights:[],
-    photos:["assets/images/nuevas/palanca_brujula.jpg"]
-  },
-  {
-    name:"Lupa de observación de la brújula",
-    category:"Orientación",
-    description:"Permite observar las extremidades de la aguja imantada y comprobar su coincidencia con la referencia de la brújula.",
-    tags:["Brújula","Observación"],
-    view:"vista_lateral_derecha",
-    viewTitle:"Vista lateral derecha",
-    highlights:[],
+    description:"Permite observar la aguja imantada durante la orientación y comprobar su coincidencia con la referencia del goniómetro.",
+    tags:["Brújula","Orientación"],
+    view:"vista_frontal",
+    viewTitle:"Vista frontal",
+    highlights:[[37,50,16,9,"rounded"]],
     photos:["assets/images/nuevas/lupa_brujula.jpg"]
   },
   {
-    name:"Nivel esférico",
-    category:"Nivelación",
-    description:"Permite realizar la nivelación inicial del aparato mediante el ajuste de las patas del trípode.",
-    tags:["Nivelación","Ajuste inicial"],
-    view:"vista_oblicua",
-    viewTitle:"Vista oblicua",
-    highlights:[],
-    photos:["assets/images/nuevas/nivel_esferico.jpg"]
+    name:"Tornillo y palanca de movimiento particular",
+    category:"Dirección",
+    description:"El tornillo proporciona el movimiento particular lento y la palanca el movimiento particular rápido. Al accionarlos, la placa de índices se desplaza sobre el limbo horizontal y cambia la lectura en dirección.",
+    tags:["Dirección","Movimiento particular"],
+    view:"vista_lateral_derecha",
+    viewTitle:"Vista lateral derecha",
+    highlights:[[61,53,22,17,"rounded"]],
+    photos:["assets/images/nuevas/movimiento_particular.jpg"]
   },
   {
-    name:"Ventana del nivel tubular",
-    category:"Nivelación",
-    description:"Permite observar, mediante su espejo, la burbuja del nivel tubular alojado en el montante izquierdo de la alidada.",
-    tags:["Nivelación","Nivel tubular"],
-    view:"vista_lateral_izquierda",
-    viewTitle:"Vista lateral izquierda",
-    highlights:[],
-    photos:["assets/images/nuevas/ventana_nivel_tubular.jpg"]
+    name:"Tambor y platillo de dirección",
+    category:"Dirección",
+    description:"Permiten obtener la lectura vertical del goniómetro. El tambor proporciona las centenas de milésima y el platillo las decenas y unidades.",    tags:["Dirección","Lectura angular"],
+    view:"vista_frontal",
+    viewTitle:"Vista frontal",
+    highlights:[[47,56,22,16,"ellipse"]],
+    photos:["assets/images/nuevas/tambor_direccion.jpg"]
+  },
+  {
+    name:"Tornillo y palanca de movimiento general",
+    category:"Dirección",
+    description:"El tornillo proporciona el movimiento general lento y la palanca el movimiento general rápido. La placa de índices y el limbo giran solidariamente, por lo que la lectura establecida no cambia.",
+    tags:["Dirección","Movimiento general"],
+    view:"vista_posterior",
+    viewTitle:"Vista posterior",
+    highlights:[[25,70,25,18,"rounded"]],
+    photos:["assets/images/nuevas/movimiento_general.jpg"]
   },
   {
     name:"Tornillos nivelantes",
     category:"Nivelación",
-    description:"Los tres tornillos de la plataforma nivelante permiten calar el nivel tubular y dejar vertical el eje principal del aparato.",
-    tags:["Nivelación","Plataforma nivelante"],
+    description:"Los tres tornillos nivelantes permiten ajustar la inclinación del instrumento para calar el nivel tubular. Se actúa primero sobre dos tornillos y después sobre el tercero.",
+    tags:["Nivelación","Base"],
     view:"vista_frontal",
     viewTitle:"Vista frontal",
-    highlights:[],
+    highlights:[
+      [22,62,15,12,"ellipse"],
+      [45,73,16,12,"ellipse"]
+    ],
     photos:["assets/images/nuevas/tornillos_nivelantes.jpg"]
+  },
+  {
+    name:"Brújula",
+    category:"Orientación",
+    description:"La aguja imantada proporciona una referencia aproximada del norte magnético para orientar el goniómetro.",
+    tags:["Orientación","Norte magnético"],
+    view:"vista_frontal",
+    viewTitle:"Vista frontal",
+    highlights:[[33,39,29,16,"ellipse"]],
+    photos:["assets/images/nuevas/brujula_superior.jpg"]
+  },
+  {
+    name:"Nivel esférico",
+    category:"Nivelación",
+    description:"Permite realizar la nivelación inicial o en grueso mediante el ajuste de las patas del trípode.",
+    tags:["Nivelación","Ajuste inicial"],
+    view:"vista_frontal",
+    viewTitle:"Vista frontal",
+    highlights:[[35,66,17,12,"ellipse"]],
+    photos:["assets/images/nuevas/nivel_esferico.jpg"]
+  },
+  {
+    name:"Palanca de liberación de la brújula",
+    category:"Orientación",
+    description:"Al mantenerla accionada libera la aguja imantada para que oscile y busque el norte magnético. Al soltarla, la aguja vuelve a quedar bloqueada.",
+    tags:["Brújula","Liberación"],
+    view:"vista_lateral_derecha",
+    viewTitle:"Vista lateral derecha",
+    highlights:[[65,44,15,13,"rounded"]],
+    photos:["assets/images/nuevas/palanca_brujula.jpg"]
+  },
+  {
+    name:"Nivel tubular",
+    category:"Nivelación",
+    description:"Permite efectuar la nivelación fina del goniómetro mediante los tornillos nivelantes y comprobar si el nivel está corregido o descorregido.",
+    tags:["Nivelación","Ajuste fino"],
+    view:"vista_lateral_izquierda",
+    viewTitle:"Vista lateral izquierda",
+    highlights:[[35,57,35,11,"rounded"]],
+    photos:["assets/images/nuevas/nivel_tubular.jpg"]
   }
 ];
 
@@ -248,7 +212,7 @@ function selectComponent(index){
   document.getElementById("componentCounter").textContent = `${currentIndex+1} / ${components.length}`;
   document.getElementById("locationViewTitle").textContent = component.viewTitle;
   locationImage.src = viewFiles[component.view];
-  locationImage.alt = `${component.viewTitle} del T-20`;
+  locationImage.alt = `${component.viewTitle} del G-10`;
   renderHighlights(component);
 
   document.getElementById("detailNumber").textContent = currentIndex+1;
@@ -284,12 +248,9 @@ document.getElementById("expandImage").addEventListener("click", () => {
 document.querySelectorAll("[data-image]").forEach(button => {
   button.addEventListener("click", () => openModal(button.dataset.image,button.dataset.title));
 });
-const openCompassPhoto = document.getElementById("openCompassPhoto");
-if(openCompassPhoto){
-  openCompassPhoto.addEventListener("click", () => {
-    openModal("assets/images/nuevas/brujula_circular.jpg","Brújula circular del T-20");
-  });
-}
+document.getElementById("openCompassPhoto").addEventListener("click", () => {
+  openModal("assets/images/nuevas/brujula_superior.jpg","Brújula — vista superior");
+});
 document.getElementById("closeModal").addEventListener("click", () => modal.close());
 modal.addEventListener("click", event => {
   const rect = modal.getBoundingClientRect();
@@ -340,7 +301,7 @@ const observer = new IntersectionObserver(entries => {
     if(!entry.isIntersecting) return;
     navLinks.forEach(link => link.classList.toggle("active",link.getAttribute("href") === `#${entry.target.id}`));
     const heading = entry.target.querySelector("h2");
-    document.getElementById("pageTitle").textContent = heading ? heading.textContent : "Goniómetro Wild T-20";
+    document.getElementById("pageTitle").textContent = heading ? heading.textContent : "Goniómetro Wild G-10";
   });
 },{rootMargin:"-35% 0px -55% 0px",threshold:0});
 sections.forEach(section => observer.observe(section));
