@@ -19,5 +19,8 @@ Versión integrada del recurso didáctico.
   - `practica/ejercicios.html`: selección de ejercicios.
   - `practica/index.html`: simulador y práctica libre.
 
+## Licencias
 
-
+- **Contenido educativo original:** [CC BY-NC-SA 4.0](LICENSE-CONTENT.md).
+- **Código HTML, CSS y JavaScript:** [MIT](LICENSE-CODE.md).
+- **Materiales de terceros:** mantienen sus respectivos derechos y licencias y quedan excluidos de las licencias anteriores salvo indicación expresa.
